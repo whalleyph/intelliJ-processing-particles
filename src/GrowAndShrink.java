@@ -15,6 +15,7 @@ public class GrowAndShrink implements Particle {
         this.size = size;
         this.myColour = p5.color(0, p5.random(0, 255), 0);
     }
+
     @Override
     public void display() {
         p5.fill(myColour);
@@ -23,10 +24,10 @@ public class GrowAndShrink implements Particle {
 
     @Override
     public void update() {
-        if(size > 50) {
+        if (size > 50) {
             growthRate = -1;
         }
-        if(size < 10) {
+        if (size < 10) {
             growthRate = 1;
         }
         size += growthRate;

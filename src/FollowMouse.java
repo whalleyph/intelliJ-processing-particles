@@ -26,13 +26,13 @@ public class FollowMouse implements Particle {
     @Override
     public void update() {
         final float stepSize = 0.01F;
-        if(x < p5.mouseX) {
+        if (x < p5.mouseX) {
             xVel += stepSize;
         } else if (x > p5.mouseX) {
             xVel -= stepSize;
         }
 
-        if(y < p5.mouseY) {
+        if (y < p5.mouseY) {
             yVel += stepSize;
         } else if (y > p5.mouseY) {
             yVel -= stepSize;

@@ -1,8 +1,10 @@
 import processing.core.PApplet;
 
+import java.util.ArrayList;
+
 
 public class Main extends PApplet {
-    Particle[] particles;
+    static ArrayList<Particle> particles;
 
     public static void main(String[] args) {
         PApplet.main(new String[]{"Main"});
@@ -15,15 +17,14 @@ public class Main extends PApplet {
 
     @Override
     public void setup() {
-        particles = createParticles(this, 10);
+        particles = new ArrayList<Particle>();
+        createParticles(this, 100);
     }
 
-    public static Particle[] createParticles(PApplet p5, int numToCreate) {
-        Particle[] particles = new Particle[numToCreate];
+    public static void createParticles(PApplet p5, int numToCreate) {
         for (int i = 0; i < numToCreate; i++) {
-            particles[i] = createRandomParticles(p5);
+            particles.add(createRandomParticles(p5));
         }
-        return particles;
     }
 
     private static Particle createRandomParticles(PApplet p5) {
@@ -49,5 +50,9 @@ public class Main extends PApplet {
         for (Particle s : particles) {
             s.update();
         }
+    }
+
+    public void mousePressed() {
+        particles.add(new BouncingBall(this, mouseX, mouseY, 25));
     }
 }

@@ -1,9 +1,4 @@
 # intellij-processing-particles
 
-An example Java (Intellij) project that uses Processing library but will work outside of the Processing IDE.
-
-Note that the project has multiple branches, with differing levels of complexity.
-
-### Installation
-
-This project bundles all the required Processing libraries.  This isn't a best-practice, but keeps things very simple.
+Particle Interface with 3 classes with 3 particle classes. Animation gives a third chance for a particle to be of each
+type.
